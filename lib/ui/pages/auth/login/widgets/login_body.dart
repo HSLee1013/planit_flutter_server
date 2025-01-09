@@ -19,12 +19,26 @@ class LoginBody extends ConsumerWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // 로고 텍스트
-              Text(
-                'Planit',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+              Container(
+                width: 300,
+                height: 300,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/planit.png',
+                      width: 170,
+                      height: 170,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Planit',
+                      style: TextStyle(
+                        fontSize: 45,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(height: 40),

@@ -16,7 +16,28 @@ class SignupBody extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // 로고 텍스트
+              Container(
+                width: 300,
+                height: 300,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/planit.png', // 로고 경로
+                      width: 170,
+                      height: 170,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Planit',
+                      style: TextStyle(
+                        fontSize: 45,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               SizedBox(height: 20),
               Text(
                 '회원가입',
