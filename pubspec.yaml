@@ -42,6 +42,7 @@ dependencies:
   validators: ^3.0.0 # 유효성 검사
   intl: ^0.19.0 # 포맷팅
   flutter_riverpod: ^2.6.1
+  logger: ^2.5.0 # 콘솔창에서 결과물을 쉽게 확인하는 Log 라이브러리
 
 
 dev_dependencies:
