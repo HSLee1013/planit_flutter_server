@@ -101,46 +101,7 @@ class SignupBody extends ConsumerWidget {
                   final password = _password.text.trim();
                   final confirmPassword = _confirmPassword.text.trim();
 
-                  if (username.isEmpty ||
-                      email.isEmpty ||
-                      password.isEmpty ||
-                      confirmPassword.isEmpty) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("모든 칸을 채워주세요.")),
-                    );
-                    return;
-                  }
-
-                  if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(email)) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("유효한 이메일 형식이 아닙니다.")),
-                    );
-                    return;
-                  }
-
-                  if (!RegExp(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,15}$')
-                      .hasMatch(password)) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("비밀번호는 영문 + 숫자 조합, 8~15자여야 합니다.")),
-                    );
-                    return;
-                  }
-
-                  if (password != confirmPassword) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("비밀번호가 일치하지 않습니다.")),
-                    );
-                    return;
-                  }
-
-                  try {
-                    gvm.signup(username.trim(), email.trim(), password.trim());
-                    Navigator.pushNamed(context, "/login");
-                  } catch (e) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("회원가입 실패")),
-                    );
-                  }
+                  gvm.ckoutUser(username, email, password, confirmPassword);
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 50),
